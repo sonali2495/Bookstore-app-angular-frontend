@@ -1,0 +1,45 @@
+.header_top{
+    background-color: rgb(145, 35, 54);
+    height: 60px;
+    font-size: 14px;
+    display: flex;
+    color: white;
+    padding-right: 8px;
+    flex-direction: row;
+}
+
+.header_menu {
+    display: flex;
+    padding: 10px 8px 8px 8px;
+
+}
+
+.header_menu > div {
+    margin: 8px;
+}
+.header_menu_logo{
+    object-fit: contain;
+    display: flex;
+    flex-direction: row;
+    width: 80px;
+    margin: 12px 20px 0px 2px;
+}
+
+.logo_content_text{
+    color: rgb(136, 77, 77);
+}
+
+.header_menu_signIn {
+    display: flex;
+    flex-direction: column;
+}
+
+.header_menu_top_item {
+    font-size: 20px;
+    color: rgb(247, 244, 241);
+}
+
+.header_menu_bottom_item {
+    font-size: 15px;
+    font-weight: 800;
+}
