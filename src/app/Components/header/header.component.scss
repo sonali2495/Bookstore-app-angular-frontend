@@ -1,0 +1,84 @@
+.header_top{
+    background-color: rgb(145, 35, 54);
+    height: 60px;
+    font-size: 14x;
+    display: flex;
+    color: white;
+    padding-right: 8px;
+    flex-direction: row;
+}
+
+.header_menu {
+    display: flex;
+    padding: 10px 8px 20px 10px;
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+.header_menu > div {
+    margin: 8px;
+}
+.header_menu_logo{
+    object-fit: contain;
+    display: flex;
+    flex-direction: row;
+    width: 70px;
+    margin: 12px 20px 0px 2px;
+}
+
+.logo_content_text{
+    color: rgb(136, 77, 77);
+}
+
+.header_menu_signIn {
+    display: flex;
+    flex-direction: column;
+}
+
+.header_menu_top_item {
+    font-size: 20px;
+    color: rgb(247, 244, 241);
+    font-weight: 500;
+}
+
+.header_menu_bottom_item {
+    font-size: 15px;
+}
+
+.header_menu_searchbar {
+    display: flex;
+    margin-top: 8px;
+    height: 40px;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.header_menu_input{
+    height: 20px;
+    padding: 4px;
+    border: none;
+    width: 100%;
+}
+
+.header_menu_searchbar_icon {
+    height: 28px;
+    color: black;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header_menu_cart{
+    display: flex;
+    margin-top: 10px;
+    margin-left: 8px;
+    justify-content: space-around;
+}
+
+.header_cart_number {
+    color: rgb(240, 231, 222);
+    font-size: 20px;
+    font-weight: bold;
+}

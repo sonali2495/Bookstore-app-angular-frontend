@@ -1,0 +1,88 @@
+<div fxLayout="row" fxLayoutAlign="start center">
+
+    <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="2px" style="margin-left: 100px; margin-top: 50px;">
+        <span style="font-size: 25px;color: #0A0102;">Books</span>
+        <span style="font-size: 10px;color: #878787;">({{BookCount}} items)</span>
+    </div>
+
+    <span class="example-spacer"></span>
+
+    <div style="margin-top: 50px;">
+        <mat-form-field appearance="outline">
+            <mat-label>Sort by relevance</mat-label>
+            <mat-select style="height: 10px;">
+                <mat-option (click)="sortlowtohigh()" value="option1">Price:Low to High</mat-option>
+                <mat-option (click)="sorthightolow()" value="option2">Price:High to Low</mat-option>
+                <mat-option (click)="newestarrivalse()" value="option3">Newest Arrivals</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+</div>
+
+
+<div class="matcarddiv" >
+
+    <mat-card class="example-card" *ngFor='let book of BookList | paginate: { itemsPerPage: 12, currentPage: page, totalItems:totallength} '>
+
+        <div class="imgdiv" (click)="onquickview(book)">
+            <img src="../../../assets/Dashboard/Image 20.png" class="mainimg" matTooltip="Quick view">
+        </div>
+
+
+        <div style="margin-left: 20px; margin-top: 10px;flex-direction: column;">
+            <div>
+                <p style="font-size: 14px;">{{book.bookName}}</p>
+            </div>
+
+            <div style="word-wrap: break-word;">
+                <p style="font-size: 12px;color: #878787;"> by {{book.author}}</p>
+            </div>
+
+            <div fxLayout="row" fxLayoutAlign="start center">
+                <span class="ratings">4.5*</span>
+
+
+                <div class="reviews">
+                    (20)
+                </div>
+            </div>
+
+
+
+            <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="20px">
+                <span style="font-size: 12px ;color: #0A0102;">Rs.{{book.price-book.discountPrice}}</span>
+                <span style="font-size: 12px ;color: #878787;"
+                    *ngIf="book.discountPrice>0"><del>Rs.{{book.price}}</del></span>
+            </div>
+        </div>
+
+
+
+        <div  fxLayout="row" fxLayoutAlign="end center"fxLayoutGap="20px" >
+            <button   matTooltip="Add to Cart" (click)="addtocart(book)" class="fabbutton" mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+                <img src="../../../assets/homepageimages/shopping_cart_white_24dp.svg" style="width: 15px;
+                margin-top: -8px;" alt="">
+            </button>
+
+
+            <button  matTooltip="Add to Wishlist"  (click)="addtowishlist(book) " class="fabbutton" mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+                <img src="../../../assets/homepageimages/favorite_border_white_24dp.svg"  style="width: 15px;
+                margin-top: -8px;" alt="">
+            </button>
+        </div>
+
+
+
+    </mat-card>
+
+   
+</div>
+
+<div fxLayout="row" fxLayoutAlign="center center" class="pagination" fxLayoutGap="50px">
+    <pagination-controls class="my-pagination" (pageChange)="page = $event"></pagination-controls>
+</div>
+
+
+<div >
+    <app-footer ></app-footer>
+</div>

@@ -1,0 +1,106 @@
+<mat-toolbar style="background-color: #A03037; color: antiquewhite; display: flex;" [ngStyle.xs]="{'font-size.px': 10}">
+
+    <img  (click)="onprofile()" src="../../../assets/forgetpassword/education.svg" [ngStyle.xs]="{'width.px': 20}"
+    style="padding: 0px 6px 0px 25px;margin-left: 60px;">
+<span>Bookstore</span>
+
+<div class="search_bar" [ngStyle.xs]="{'margin-left.px': 10}">
+    <div class="search_bar">
+        <mat-icon [ngStyle.xs]="{'width.px': 10}" class="search_icon">search</mat-icon>
+        <input type="text" placeholder="Search..." class="search_input" [ngStyle.xs]="{'width.px': 10}"
+            [(ngModel)]="value">
+        <button class="crossbutton" *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+
+</div>
+
+<div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="30px" style="margin-left: 50px;"
+        [ngStyle.xs]="{'margin-left.px': -10}">
+        <button [matMenuTriggerFor]="menu" class="toolbarlabels">
+            <img src="../../../assets/homepageimages/person_outline_white_24dp.svg" [ngStyle.xs]="{'width.px': 20}">
+        </button>
+        <button   matBadge="{{message}}" matBadgeColor="warn" (click)="oncart()" class="toolbarlabels" [ngStyle.xs]="{'margin-left.px': -50}">
+            <img src="../../../assets/homepageimages/shopping_cart_white_24dp.svg" [ngStyle.xs]="{'width.px': 20}"
+                alt="">
+        </button>
+    </div>
+
+    <mat-menu #menu="matMenu">
+        <div fxLayout="column" fxLayoutAlign="space-between start" style="margin-left: 10px;">
+            <span style="font:12px;color: #0A0102;opacity: 1;">Welcome</span>
+            <span style="font-size: 12px;">To Access Acoount and Manage Orders</span>
+        </div>
+
+        <div style="margin-top: 10px;">
+            <button class="loginbutton" style="color: red;">LOGIN / SIGNUP</button>
+        </div>
+
+        <mat-divider style="margin-top: 10px;"></mat-divider>
+
+        <div style="margin-top: 10px; display: flex;flex-direction: column;">
+            <div>
+                <button mat-icon-button style="background-color: transparent;border: none;">
+                    <img src="../../../assets/homepageimages/markunread_mailbox_black_24dp.svg" height="14px"
+                        style="opacity: 0.7;">
+                </button>
+                <span style="opacity: 0.7;"> My Orders </span>
+            </div>
+
+
+            <div>
+                <button (click)="onWishList()" mat-icon-button style="background-color: transparent;border: none;">
+                    <img src="../../../assets/homepageimages/favorite_border_black_24dp.svg" height="14px"
+                        style="opacity: 0.7;">
+                </button>
+                <span style="opacity: 0.7;">WishList </span>
+
+            </div>
+
+            <div style="margin-top: 10px;">
+                <button (click)=" logout()" class="loginbutton" style="color: red;">LogOut</button>
+            </div>
+
+        </div>
+    </mat-menu>
+
+
+    <mat-menu #cartmenu="matMenu">
+        <div fxLayout="column" fxLayoutAlign="space-between start" style="margin-left: 10px;">
+            <span style="font:12px;color: #0A0102;opacity: 1;">Hello</span>
+            <span style="font-size: 12px;">To Access Acoount and Manage Orders</span>
+        </div>
+
+        <div style="margin-top: 10px;">
+            <button class="loginbutton" style="color: red;">LOGIN / SIGNUP</button>
+        </div>
+
+        <mat-divider style="margin-top: 10px;"></mat-divider>
+
+        <div style="margin-top: 10px; display: flex;flex-direction: column;">
+            <div>
+                <button mat-icon-button style="background-color: transparent;border: none;">
+                    <img src="../../../assets/homepageimages/markunread_mailbox_black_24dp.svg" height="14px"
+                        style="opacity: 0.7;">
+                </button>
+                <span style="opacity: 0.7;"> My Orders </span>
+            </div>
+
+
+            <div>
+                <button mat-icon-button style="background-color: transparent;border: none;">
+                    <img src="../../../assets/homepageimages/favorite_border_black_24dp.svg" height="14px"
+                        style="opacity: 0.7;">
+                </button>
+                <span style="opacity: 0.7;">WishList </span>
+
+            </div>
+        </div>
+    </mat-menu>
+
+</mat-toolbar>
+
+<div>
+    <router-outlet></router-outlet>
+</div>

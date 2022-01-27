@@ -1,0 +1,53 @@
+<div fxLayout="row" fxLayoutAlign="start center" style="margin-top: 30px;flex-wrap: wrap;">
+    <button mat-button class="homebutton">Home</button>
+    <span>/My WishList</span>
+</div>
+<div style="display: flex;">
+    <div fxLayout="column" fxLayoutAlign="start start" style="margin-top: 50px;margin-left: 100px;flex-wrap: wrap;"
+        fxLayoutGap="30px">
+        <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+
+            <span>Personal Details</span>
+            <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="100px">
+                <div>
+                    <button *ngIf="editbutton" style="background-color: transparent;border: none;color: RED;"
+                        (click)="toggleDisable()">Edit</button>
+                    <div>
+                        <button *ngIf="cancelbutton" (click)=" oncancel()"
+                            style="background-color: transparent;border: none;color: RED;">Cancel</button>
+                    </div>
+                </div>
+                <span class="example-spacer "></span>
+                <div>
+                    <button *ngIf="savebutton" class="bottombuttons" style="color: white;">Save</button>
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <div fxLayout="column" fxLayoutAlign="space-between start" fxLayoutGap="5px">
+            <label for="fullname">Full Name</label>
+            <input style="width: 450px;height: 24px;" placeholder="username" [disabled]='disableTextbox'>
+        </div>
+
+        <div fxLayout="column" fxLayoutAlign="space-between start" fxLayoutGap="5px">
+            <label for="email">Email Id</label>
+            <input style="width: 450px;height: 24px;" placeholder="Email Id" [disabled]='disableTextbox'>
+        </div>
+
+        <div fxLayout="column" fxLayoutAlign="space-between start" fxLayoutGap="5px">
+            <label for="password">Password</label>
+            <input type="password" style="width: 450px;height: 24px;" placeholder="Password"
+                [disabled]='disableTextbox'>
+        </div>
+
+        <div fxLayout="column" fxLayoutAlign="space-between start" fxLayoutGap="5px">
+            <label for="phone">MobileNumber</label>
+            <input style="width: 450px;height: 24px;" placeholder="Phone" [disabled]='disableTextbox'>
+        </div>
+
+
+    </div>
+</div>

@@ -1,0 +1,139 @@
+<div style="background-color: gray;height: 100%;" [ngStyle.xs]="{'width.px': 550, color: 'blue'}">
+
+    <div fxLayout="row" fxLayoutAlign="center center">
+        <div fxLayout="column" fxLayoutAlign="space-between center" fxLayout.xs="row" fxHide.lt-sm>
+            <mat-card class="example-card ">
+                <img src="..//../../assets/Login-signup/Womencart.png" class="image">
+                <h1 class="h1">Online Book Shopping</h1>
+            </mat-card>
+        </div>
+
+        <div style="display: flex;flex-flow:row">
+            <mat-card class="example-card2">
+                <div fxLayout="row" fxLayoutAlign="space-evenly start" style="margin-top:-89px;">
+                    <!-- //login form -->
+                    <mat-tab-group>
+                        <mat-tab label="Login">
+                            <form [formGroup]="loginForm" (ngSubmit)="onLogin()" fxLayout="column" 
+                                fxLayoutAlign="start start">
+
+                                <div>
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Select an option</mat-label>
+                                        <mat-select formControlName="selectedValue" disableRipple>
+                                          <mat-option  value="User">User</mat-option>
+                                          <mat-option value="Admin">Admin</mat-option>
+                                        </mat-select>
+                                      </mat-form-field>
+                                </div>
+                                <div>
+                                    <span>Email id</span>
+                                    <div>
+                                        <mat-form-field width="600px" appearance="outline">
+                                            <input matInput formControlName="email">
+                                            <mat-error>Email Required!</mat-error>
+
+
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span>Password</span>
+                                    <div>
+                                        <mat-form-field appearance="outline">
+                                            <input matInput [type]="hide?'password':'text'" matInput
+                                                formControlName="password" autocomplete="on">
+                                            <mat-error>Password Required!</mat-error>
+                                        </mat-form-field>
+
+
+                                    </div>
+
+                                </div>
+                                <div></div>
+                                <span class="forgetpass">forgetpassword?
+                                </span>
+
+                                <button class="loginbutton" style="color: white;">Login</button>
+                            </form>
+
+                            <div>
+                                <h2><span>OR</span></h2>
+                            </div>
+                            <div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="20px"
+                                fxLayout.xs="column">
+                                <button class="bottombuttons" style="color: white;">Facebbok</button>
+                                <button style=" background-color: #E4E4E4;" class="bottombuttons">Google</button>
+                            </div>
+
+
+                        </mat-tab>
+                <!-- //signupForm -->
+                        <mat-tab label="SignUp">
+                            <form [formGroup]="signupForm" fxLayout="column" fxLayoutAlign="start start">
+
+                                <div>
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Select an option</mat-label>
+                                        <mat-select formControlName="selectedValue" disableRipple>
+                                          <mat-option  value="User">User</mat-option>
+                                          <mat-option value="Admin">Admin</mat-option>
+                                        </mat-select>
+                                      </mat-form-field>
+                                </div>
+
+                                <div>
+                                    <span>Fullname</span>
+                                    <div>
+                                        <mat-form-field width="600px" appearance="outline">
+                                            <input matInput formControlName="fullName">
+                                            <mat-error>Name Required!</mat-error>
+                                            <mat-hint>FirstName is Mandatory</mat-hint>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <span>EmailId</span>
+                                    <div>
+                                        <mat-form-field width="600px" appearance="outline">
+                                            <input matInput formControlName="email">
+                                            <mat-error>Email Required!</mat-error>
+                                            <mat-hint>Email is Mandatory</mat-hint>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <span>Password</span>
+                                    <div>
+                                        <mat-form-field appearance="outline">
+
+                                            <input matInput [type]="hide?'password':'text'" matInput
+                                                formControlName="password" autocomplete="on">
+                                            <mat-error>Password Required!</mat-error>
+                                            <mat-hint>You Can use Symbols</mat-hint>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span>Mobile Number</span>
+                                    <div>
+                                        <mat-form-field appearance="outline">
+
+                                            <input matInput matInput formControlName="mobileNumber">
+                                            <mat-error>Mobile Number Required!</mat-error>
+                                            <mat-hint>Mobile Number is Mandatory</mat-hint>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </form>
+                            <button (click)="onSignup()" class="loginbutton" style="color: white;">Signup</button>
+                        </mat-tab>
+                    </mat-tab-group>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+
+</div>

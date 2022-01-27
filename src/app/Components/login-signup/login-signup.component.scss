@@ -1,0 +1,95 @@
+.example-card {
+    top: 50px;
+    width: 300px;
+    height: 300px;
+    border-radius: 25px;
+}
+
+.image {
+    margin-top: 50px;
+    width: 245px;
+    height: 245px;
+    border-radius: 50%;
+    margin-left: 30px;
+}
+.example-card2 {
+    top: 25px;
+    width: 300px;
+    min-height: 300px;
+    z-index: 1;
+    padding: 60px;
+    margin-left: -32px;
+    max-height: 500px;
+}
+.h1 {
+    margin-left: 58px;
+    letter-spacing: 0px;
+    color: #0a0102;
+    text-transform: uppercase;
+    opacity: 1;
+    font-size: 16px;
+}
+
+::ng-deep .mat-tab-header {
+    border-bottom: none;
+}
+::ng-deep .mat-ink-bar {
+    background-color: black !important;
+    bottom: 50px !important;
+}
+::ng-deep.mat-tab-label,
+::ng-deep.mat-tab-label-active {
+    min-width: 0px !important;
+    padding: 0px !important;
+    margin: 40px !important;
+}
+// .textarea {
+//     width: 252px;
+//     height: 30px;
+//     font-size: 16px;
+//     color: #0a0102;
+//     text-transform: lowercase;
+//     opacity: 1;
+// }
+.loginbutton {
+    width: 270px;
+    height: 37px;
+    background: #a03037 0% 0% no-repeat padding-box;
+    border-radius: 1px;
+    opacity: 1;
+    border: none;
+   
+}
+h2 {
+    width: 191px;
+    text-align: center;
+    border-bottom: 1px solid #000;
+    line-height: 0.1em;
+    margin: 20px 0 20px 35px;
+}
+
+h2 span {
+    background: #fff;
+    padding: 0 10px;
+}
+.bottombuttons {
+    width: 126px;
+    height: 37px;
+    background: #4266b2 0% 0% no-repeat padding-box;
+    border-radius: 1px;
+    opacity: 1;
+    border: none;
+}
+::ng-deep .mat-tab-header-pagination {
+    display: none !important;
+}
+.forgetpass{
+    float: right;
+    font: normal normal normal 10px/13px Roboto; letter-spacing: 0px;
+    color: #9D9D9D;
+    opacity: 1;
+    margin-right: 38px;
+    margin-top: -15px;
+}
+::ng-deep .mat-form-field-flex > .mat-form-field-infix { padding: 0.4em 0px !important; width: 252px;}
+::ng-deep .mat-form-field-label-wrapper { top: -1.5em; }

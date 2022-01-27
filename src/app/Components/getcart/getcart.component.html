@@ -1,0 +1,174 @@
+<div fxLayout="row" fxLayoutAlign="start center" style="margin-left: 100px;margin-top: 30px;">
+    <button (click)="onhome()"  mat-button
+        style=" padding-right: 0px; min-width: 50px;background-color: transparent;border: none;color:#9D9D9D">Home</button>
+    <span style="color: #0A0102;">/My Cart</span>
+</div>
+
+<mat-accordion multi class="example-headers-align" >
+    <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                My Cart ({{cartlistcount}})
+            </mat-panel-title>
+
+        </mat-expansion-panel-header>
+
+        <div *ngFor='let book of cartList'>
+
+            <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="40px" style="padding: 15px;">
+                <img src="../../../assets/Dashboard/Image 20.png" width="65px" height="85px" alt="">
+
+                <div fxLayout="column" fxLayoutAlign="start start">
+                    <p style="font-weight: 500;">{{book.product_id.bookName}}</p>
+                    <p style="color: #878787;;"> by {{book.product_id.author}}</p>
+
+
+                    <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="10px">
+                        <span
+                            style="font-size: 12px ;color: #0A0102;">Rs.{{book.product_id.price-book.product_id.discountPrice}}</span>
+                        <span style="font-size: 12px ;color: #878787;"
+                            *ngIf="book.product_id.discountPrice>0"><del>Rs.{{book.product_id.price}}</del></span>
+
+                    </div>
+
+
+                    <div fxLayout="row" fxLayoutGap="10px">
+
+                        <button mat-icon-button (click)="decrease(book)"
+                            style="background-color: transparent;border: none;">
+                            <span class="container"><span style="color: #DBDBDB;">-</span></span>
+                        </button>
+                        <span class="itemqty">{{item_qty}}</span>
+                        <button mat-icon-button (click)="increase(book)"
+                            style="background-color: transparent;border: none;">
+                            <span class="container"><span style="color: black;">+</span></span>
+                        </button>
+
+                        <button (click)="deleteCartlistItem(book)"
+                            style="background-color: transparent;border: none;margin-left: 10px;">Remove</button>
+                    </div>
+
+                    
+                </div>
+                <span class="example-spacer "></span>
+
+
+            </div>
+            <mat-divider style="margin-top: 10px;"></mat-divider>
+        </div>
+        <button (click)="nextStep()" class="placeorder" style="color: white;float: right;">Place Order</button>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Customer Details
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+
+
+        <div fxLayout="row" fxLayoutAlign="centercenter" fxLayoutGap="30px">
+            <form [formGroup]="edituseraddressform">
+                <div style="display: flex;flex-direction: column;">
+                    <div style="display: flex;flex-direction: row;">
+
+                        <mat-form-field appearance="outline">
+
+                            <input matInput placeholder="fullName" formControlName="fullName">
+                            <mat-error style="color: red;">
+                                Full Name is required</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline">
+
+                            <input matInput placeholder="mobileNumber" formControlName="mobileNumber">
+                            <mat-error style="color: red;">
+                                mobileNumber is required</mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <div>
+                        <mat-form-field style="width: 550px;" appearance="outline">
+                            <input matInput placeholder="address" formControlName="address">
+                            <mat-error style="color: red;">
+                                address is required</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="centercenter" fxLayoutGap="5px">
+                        <mat-form-field appearance="outline">
+                            <input matInput placeholder="city/town" formControlName="city">
+                            <mat-error style="color: red;">
+                                city/town is required</mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance="outline">
+                            <input matInput placeholder="state" formControlName="state">
+                            <mat-error style="color: red;">
+                                state is required</mat-error>
+                        </mat-form-field>
+
+                    </div>
+
+                    <div style="display: flex;">
+                        <div>
+                            <label>Type</label><br><br>
+                            <mat-radio-group aria-label="Type" fxLayout="row" fxLayoutAlign="space-around center"
+                                fxLayoutGap="100px">
+                                <mat-radio-button value="1">Home</mat-radio-button>
+                                <mat-radio-button value="2">Work</mat-radio-button>
+                                <mat-radio-button value="3">Other</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+        <button (click)="nextStep() ; onUpdateaddress()" class="continuebutton"
+            style="color: white;float: right;">Continue</button>
+
+    </mat-expansion-panel>
+
+    <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Order Summary
+            </mat-panel-title>
+
+
+        </mat-expansion-panel-header>
+
+
+        <div *ngFor='let book of cartList' fxLayoutGap="50px">
+            <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="50px">
+
+
+                <div>
+                    <img src="../../../assets/Dashboard/Image 20.png" width="65px" height="85px" alt="">
+                </div>
+
+                <div fxLayout="column" fxLayoutAlign="start start">
+                    <div>
+                        <p style="font-weight: 500;">{{book.product_id.bookName}}</p>
+                        <p style="color: #878787;;"> by {{book.product_id.author}}</p>
+
+                        <p style="font-weight: 600;"> Rs. {{book.product_id.price}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <mat-divider style="margin-top: 10px;"></mat-divider>
+
+        </div>
+
+        <button (click)="onPlaceorder()" class="placeorder" style="color: white;float: right;">CheckOut</button>
+
+    </mat-expansion-panel>
+
+
+</mat-accordion>
+
+
+<div >
+    <app-footer ></app-footer>
+</div>

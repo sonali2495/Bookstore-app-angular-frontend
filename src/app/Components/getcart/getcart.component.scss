@@ -1,0 +1,92 @@
+.mat-card{
+   
+    height: fit-content;
+    min-height: 250px;
+    width: 1022px;
+    margin-left: 110px;
+    margin-top: 50px;
+}
+.example-spacer {
+    flex: 0.9 0.9 auto;
+}
+.container {
+  display: block;
+  border: 1px solid #DBDBDB;
+  border-radius: 50%;
+  height: 23px;
+  width: 23px;
+}
+
+.container span {
+  position: absolute;
+  margin-left: -3px;
+  margin-top: -8px;
+  
+}
+.itemqty{
+  display: block;
+  width: 35px;
+  padding: 9px 7px 5px 38px;
+  border: 1px solid  #DBDBDB;
+}
+.bottombuttons {
+    width: 126px;
+    height: 37px;
+    background: #4266b2 0% 0% no-repeat padding-box;
+    border-radius: 1px;
+    opacity: 1;
+    border: none;
+    margin-top: 100px;
+}
+.example-headers-align .mat-expansion-panel-header-title,
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.example-headers-align .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+.mat-expansion-panel{
+ 
+    width: 700px ;
+    margin-left: 150px;
+   
+}
+.example-radio-group {
+    row-gap: 100px;
+    display: flex;
+    flex-direction: row;
+    margin: 15px 0;
+  }
+  
+  .example-radio-button {
+    margin: 5px;
+  }
+  ::ng-deep .mat-form-field-flex > .mat-form-field-infix { padding: 0.4em 0px !important; width: 252px;}
+::ng-deep .mat-form-field-label-wrapper { top: -1.5em; }
+
+.continuebutton{
+    float: right;
+    width: 126px;
+    height: 37px;
+    background: #4266b2 0% 0% no-repeat padding-box;
+    border-radius: 1px;
+    opacity: 1;
+    border: none;
+    
+}
+.placeorder{
+  float: right;
+  width: 126px;
+  height: 37px;
+  background: #4266b2 0% 0% no-repeat padding-box;
+  border-radius: 1px;
+  opacity: 1;
+  border: none;
+  margin-top: 20px;
+}

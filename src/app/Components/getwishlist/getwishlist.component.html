@@ -1,0 +1,49 @@
+<div fxLayout="row" fxLayoutAlign="start center" style="margin-left: 100px;margin-top: 30px;">
+    <button (click)=" onhome()" mat-button
+        style=" padding-right: 0px; min-width: 50px;background-color: transparent;border: none;color:#9D9D9D">Home</button>
+    <span style="color: #0A0102;">/My WishList</span>
+</div>
+
+<div>
+    <mat-card class="mat-card">
+        <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="2px"
+            style="background-color:#F5F5F5;margin-top: -16px;margin-left: -16px;padding: 10px 10px 10px 10px;margin-right: -15px;">
+            <span style="font-size: 15px;color: #0A0102;">My WishList</span>
+            <span style="font-size: 15px;color:#0A0102;">({{wishListCount}})</span>
+
+
+        </div>
+
+        <div *ngFor='let book of wishList'>
+
+            <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="40px"
+                style="margin-top:40px;margin-left: 10px;">
+                <img src="../../../assets/Dashboard/Image 20.png" width="65px" height="85px" alt="">
+
+                <div fxLayout="column" fxLayoutAlign="start start">
+                    <p style="font-weight: 500;">{{book.product_id.bookName}}</p>
+                    <p style="color: #878787;;"> by {{book.product_id.author}}</p>
+                    
+                    <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="10px">
+                        <span
+                            style="font-size: 12px ;color: #0A0102;">Rs.{{book.product_id.price-book.product_id.discountPrice}}</span>
+                        <span style="font-size: 12px ;color: #878787;"
+                            *ngIf="book.product_id.discountPrice>0"><del>Rs.{{book.product_id.price}}</del></span>
+
+                    </div>
+
+                </div>
+
+                <span class="example-spacer "></span>
+                <button (click)="deleteWishlistItem(book)"
+                    style="background-color: transparent;border: none;opacity: 0.8;">
+                    <img src="../../../assets/WishList/delete_black_18dp.svg" alt="">
+                </button>
+
+            </div>
+
+            <mat-divider style="margin-top: 15px;"></mat-divider>
+        </div>
+
+    </mat-card>
+</div>

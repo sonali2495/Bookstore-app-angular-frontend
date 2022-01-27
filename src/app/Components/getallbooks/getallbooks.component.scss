@@ -1,0 +1,83 @@
+.example-card {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 235px;
+    min-height: 350px;
+    padding: 0px;
+    border: 1px solid #E2E2E2 ;
+    border-width: 1px ;
+    margin-bottom: 20px;
+   
+}
+.ratings{
+    background-color: #388E3C;
+     font-size: 10px;
+      padding: 0px 7px 0px 9px;
+      color: white;
+}
+.reviews{
+    font: normal normal normal 10px/13px Roboto; color: #878787; margin-left: 5px;
+}
+.matcarddiv{
+    display: flex;
+    flex-wrap:wrap;
+    gap:30px;
+    flex-direction: row;
+    justify-content: start;
+    margin-left: 100px;
+    margin-top: 50px;
+    position: relative;
+}
+.imgdiv{
+    display: flex;
+    justify-content: center;
+    background-color:#F5F5F5;
+    padding: 10px;
+}
+.mainimg{
+    width:105px;
+    height:135px;
+    margin-bottom: 20px;
+    margin-top:21px;
+}
+.example-spacer{
+flex: 0.8 1 auto;
+}
+::ng-deep .mat-form-field-flex > .mat-form-field-infix { padding: 0.4em 0px !important;}
+.pagination {
+   
+    display: inline-block;
+    
+  }
+  
+  .pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+  
+  .pagination a.active {
+    background-color: #8F2B2F;
+    color: white;
+  }
+  .pagination a:hover:not(.active) {background-color: red;}
+
+  .fabbutton{
+    width: 32px;
+    margin-right: 20px;
+    height: 32px;
+    background: darkgray;
+  }
+  .green {
+    background-color: green;
+}
+
+.red {
+    background-color: red;
+}
+::ng-deep .my-pagination  .ngx-pagination .current {
+  background: red;
+  row-gap: 30px;
+}
